@@ -59,15 +59,12 @@ const carOthers=[] ;
 
 for (const x in cars) {
         const element = cars[x]; // è elemento di turno che controlliamo per ogni iterazione
-        if (element.alimentazione=="benzina"){ // se il value legato alla propertie classe è uguale a mammiferi allora 
-       // console.log(element); //la stampiamo
-        carBenzina.push({element:element});//la aggiungiamo alla nuova array mammiferi che abbiamo creato
-        }else if (element.alimentazione=="diesel") {
-           // console.log(element); //la stampiamo
-            carDiesel.push({element:element});
+        if (element.alimentazione=="benzina"){ // se il value legato all' allimentazione è benzina
+        carBenzina.push({element:element});//la aggiungiamo alla nuova array carBenzina che abbiamo creato
+        }else if (element.alimentazione=="diesel") {// se il value legato all' allimentazione è diesel
+            carDiesel.push({element:element});//la aggiungiamo alla nuova array carDiesel che abbiamo creato
         } else {
-           // console.log(element); //la stampiamo
-            carOthers.push({element:element});
+            carOthers.push({element:element}); //tutte le altre macchine le aggiungiamo all'array carOthers
             }
     
 }
