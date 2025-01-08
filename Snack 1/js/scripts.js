@@ -93,7 +93,7 @@ for (const x in cars) {
                 carOthers2.push(carName);;
                  }
     }
-//stampo la lista degli mammiferi su html
+//stampo le liste degli nuova array su html
 document.getElementById("demo1").innerHTML = "<p> La lista delle macchine a benzina è: </p> <u>" + carBenzina2 + "</u>";
 document.getElementById("demo2").innerHTML = "<p> La lista delle macchine che usano il diesel è: </p> <u>" + carDiesel2 + "</u>";
 document.getElementById("demo3").innerHTML = "<p> La lista delle macchine che non usano ne benzina e ne diesel è: </p> <u>" + carOthers2 + "</u>"; 
