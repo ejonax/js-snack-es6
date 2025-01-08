@@ -29,7 +29,6 @@ animale4 :{
 
 
 const mammiferi=[]; // creamo la nuova array mammiferi dove aggiungeremo gli elementi dell' animali che sono mammiferi
-
 for (const x in animali) {
     if (Object.prototype.hasOwnProperty.call(animali, x)) {
         const element = animali[x]; // è elemento di turno che controlliamo per ogni iterazione
@@ -40,6 +39,20 @@ for (const x in animali) {
     }
 }
 console.log(mammiferi);//stampiamo tutta l'array mammiferi
-  
-  
+
+/* Secondo metodo dove stampo il nome degli mammiferi sul index.html*/
+const mam=[]; // creamo la nuova array mammiferi dove aggiungeremo solo il nome degli animali che sono mammiferi
+for (const x in animali) {
+    if (Object.prototype.hasOwnProperty.call(animali, x)) {
+        const element = animali[x]; 
+        if (element.classe=="mammiferi"){ // se il value legato alla propertie classe è uguale a mammiferi allora 
+        let nomeAnimale=element.nome;//prendo solo il nome dell'elemento animali
+        console.log(nomeAnimale);
+        mam.push(nomeAnimale);
+        }
+    }
+}
+//stampo la lista degli mammiferi su html
+document.getElementById("demo2").innerHTML = "<p> La lista degli animali mammiferi è: </p>" + mam; 
+
   
