@@ -53,38 +53,38 @@ for (let index = 0; index < newPeople.length; index++) {
     const element = newPeople[index];
     text +=  element + "<br>";
 }
-document.getElementById("demo1").innerHTML = "<p> La nuova array creata con il primo metodoè: </p>" + text;
+document.getElementById("demo1").innerHTML = "<p> La nuova array creata con il primo metodo è: </p>" + text;
 
 /*******PRIMO METODO***********/
 /* creo una seconda array gli elementi della qualle sono gli stessi del primo array,
- ma per ogni elemento si aggiunge una phrase come nuovo property dell'object person */
+ ma per ogni elemento si aggiunge una frase come nuovo property dell'object person */
 const newPeople2=[];
 for (const x in people) {
         const element = people[x];
         if( element.Age < 18 ) {
            const newProperty="Non puo guidare perchè ne ha meno di 18 anni!";
-           element.phrase=newProperty;
+           element.Frase=newProperty;
            newPeople2.push({Element:element});
         }else if ( element.Age < 75  ) {
            const newProperty="Puo guidare perchè ne ha più di 18 anni e meno di 75 anni!";
-           element.phrase=newProperty;
+           element.Frase=newProperty;
            newPeople2.push({Element:element});
         }else {
             const newProperty="Non puo guidare perchè ne ha più di 75 anni!";
-            element.phrase=newProperty;
+            element.Frase=newProperty;
             newPeople2.push({Element:element});
         }
 }
 console.log(newPeople2);
 
 //stampo la nuova array come una lista sulla pagina index
-//ogni objcet person che si stampa si stampa come un elemento <li> di una lista <ul>
+//ogni object person si stampa come un elemento <li> di una lista <ul>
 let text2= " ";
 for (const i in newPeople2) {
         let singlePerson = newPeople2[i];
         for (const j in singlePerson) {
                 const element = singlePerson[j];
-                let newElement=element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò: '" + element.phrase + " '";
+                let newElement=element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò: '" + element.Frase + " '";
                 console.log(newElement);
                 text2 +=  "<li>"+newElement + "</li>";
             }
