@@ -77,7 +77,8 @@ for (const x in people) {
 }
 console.log(newPeople2);
 
-//stampo la nuova array come una lista sulla oagina index
+//stampo la nuova array come una lista sulla pagina index
+//ogni objcet person che si stampa si stampa come un elemento <li> di una lista <ul>
 let text2= " ";
 for (const i in newPeople2) {
         let singlePerson = newPeople2[i];
