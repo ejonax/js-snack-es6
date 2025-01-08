@@ -17,10 +17,11 @@ console.log(capitalize("PaPeRinO"));  // => "Paperino"
 
 for (let index = 0; index <   stringhe.length; index++) {
     const element = stringhe[index];
-    const capitalizeElement=capitalize(element);
-    console.log(capitalizeElement);
-    capitalizedStringhe.push(capitalizeElement);
+    const capitalizedElement=capitalize(element);
+    console.log(capitalizedElement);
+    capitalizedStringhe.push(capitalizedElement);
 }
+console.log(capitalizedStringhe);
 
 document.getElementById("demo1").innerHTML = "<p> Il primo array  delle stringhe è: </p> <u>" + stringhe + "</u>"; 
 document.getElementById("demo2").innerHTML = "<p> Il secondo array formattando le stringhe del primo array in minuscolo e con l'iniziale maiuscola è: </p> <u>" + capitalizedStringhe + "</u>"; 
