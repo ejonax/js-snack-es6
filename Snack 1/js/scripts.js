@@ -60,7 +60,7 @@ const carOthers=[] ;
 for (const x in cars) {
         const element = cars[x]; // è elemento di turno che controlliamo per ogni iterazione
         if (element.alimentazione=="benzina"){ // se il value legato all' allimentazione è benzina
-        carBenzina.push({element:element});//la aggiungiamo alla nuova array carBenzina che abbiamo creato
+            carBenzina.push({element:element});//la aggiungiamo alla nuova array carBenzina che abbiamo creato
         }else if (element.alimentazione=="diesel") {// se il value legato all' allimentazione è diesel
             carDiesel.push({element:element});//la aggiungiamo alla nuova array carDiesel che abbiamo creato
         } else {
@@ -85,13 +85,13 @@ for (const x in cars) {
         if (element.alimentazione=="benzina"){ 
              carName=element.marca +" " + element.modello;
              carBenzina2.push(carName);//la aggiungiamo alla nuova array delle macchine a benzina
-             }else if (element.alimentazione=="diesel") {
-                carName=element.marca +" " + element.modello;
-                carDiesel2.push(carName);;
-             } else {
-                carName=element.marca +" " + element.modello;
-                carOthers2.push(carName);;
-                 }
+        }else if (element.alimentazione=="diesel") {
+              carName=element.marca +" " + element.modello;
+              carDiesel2.push(carName);
+        } else {
+              carName=element.marca +" " + element.modello;
+              carOthers2.push(carName);
+               }
     }
 //stampo le liste degli nuova array su html
 document.getElementById("demo1").innerHTML = "<p> La lista delle macchine a benzina è: </p> <u>" + carBenzina2 + "</u>";
