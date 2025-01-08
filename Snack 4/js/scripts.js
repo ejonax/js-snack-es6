@@ -18,7 +18,7 @@ const people=
   person4 :{ 
     Name: "Ejona4",
     Surname: "Xheka4",
-    Age: 65
+    Age: 74
   },
   person5 :{ 
     Name: "Ejona5",
@@ -27,8 +27,8 @@ const people=
   }
 }
 
+/*******SECONDO METODO***********/
 const newPeople=[];
-
 for (const x in people) {
         const element = people[x];
         if( element.Age < 18 ) {
@@ -53,5 +53,40 @@ for (let index = 0; index < newPeople.length; index++) {
     const element = newPeople[index];
     text +=  element + "<br>";
 }
-document.getElementById("demo1").innerHTML = "<p> La nuova array creata è: </p>" + text;
+document.getElementById("demo1").innerHTML = "<p> La nuova array creata con il primo metodoè: </p>" + text;
 
+/*******PRIMO METODO***********/
+/* creo una seconda array gli elementi della qualle sono gli stessi del primo array,
+ ma per ogni elemento si aggiunge una phrase come nuovo property dell'object person */
+const newPeople2=[];
+for (const x in people) {
+        const element = people[x];
+        if( element.Age < 18 ) {
+           const newProperty="Non puo guidare perchè ne ha meno di 18 anni!";
+           element.phrase=newProperty;
+           newPeople2.push({Element:element});
+        }else if ( element.Age < 75  ) {
+           const newProperty="Puo guidare perchè ne ha più di 18 anni e meno di 75 anni!";
+           element.phrase=newProperty;
+           newPeople2.push({Element:element});
+        }else {
+            const newProperty="Non puo guidare perchè ne ha più di 75 anni!";
+            element.phrase=newProperty;
+            newPeople2.push({Element:element});
+        }
+}
+console.log(newPeople2);
+
+//stampo la nuova array come una lista sulla oagina index
+let text2= " ";
+for (const i in newPeople2) {
+        let singlePerson = newPeople2[i];
+        for (const j in singlePerson) {
+                const element = singlePerson[j];
+                let newElement=element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò: '" + element.phrase + " '";
+                console.log(newElement);
+                text2 +=  "<li>"+newElement + "</li>";
+            }
+        }
+
+document.getElementById("demo2").innerHTML = "<p> La nuova array creata con il secondo metodo è: </p> <ul>" + text2 + "</ul>"
