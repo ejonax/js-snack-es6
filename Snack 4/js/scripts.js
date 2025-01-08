@@ -3,27 +3,27 @@ const people=
   person1 :{ 
     Name: "Ejona1",
     Surname: "Xheka1",
-    Age: 15,
+    Age: 15
   },
   person2 :{ 
     Name: "Ejona2",
     Surname: "Xheka2",
-    Age: 41,
+    Age: 41
   },
   person3 :{ 
     Name: "Ejona3",
     Surname: "Xheka3",
-    Age: 25,
+    Age: 25
   },
   person4 :{ 
     Name: "Ejona4",
     Surname: "Xheka4",
-    Age: 65,
+    Age: 65
   },
   person5 :{ 
     Name: "Ejona5",
     Surname: "Xheka5",
-    Age: 82,
+    Age: 82
   }
 }
 
