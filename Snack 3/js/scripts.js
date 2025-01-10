@@ -24,8 +24,8 @@ animals.forEach(element => {
 console.log(onlyMammiferi);
 
 //FILTER METHOD
-//siccome animals è un array si uo usare il methodo filter
-//come filter si controlla se la classe è mammiferi
+//siccome animals è un array si puo usare il metodo filter
+//dentro il filter si controlla se la classe è mammiferi
 //si stampa la nuova array 
 var mamAnimals=animals.filter(item=>item.classe==="mammiferi");
 console.log(mamAnimals);
