@@ -1,77 +1,24 @@
 const cars=
-{
-  car1 :{ 
-    marca: "Fiat", 
-    modello: "Panda", 
-    alimentazione: "benzina" 
-  },
-  car2 :{ 
-    marca: "Fiat", 
-    modello: "500", 
-    alimentazione: "benzina" 
-  },
-  car3 :{ 
-    marca: "Audi", 
-    modello: "A6", 
-    alimentazione: "diesel" 
-  },
-  car4 :{ 
-    marca: "Audi", 
-    modello: "S6", 
-    alimentazione: "diesel" 
-  },
-  car5 :{ 
-    marca: "Citroën", 
-    modello: "C4", 
-    alimentazione: "diesel" 
-  },
-  car6 :{ 
-    marca: "Citroën", 
-    modello: "Berlingo", 
-    alimentazione: "benzina" 
-  },
-  car7 :{ 
-    marca: "Ford", 
-    modello: "Fiesta", 
-    alimentazione: "metano" 
-  },
-  car8 :{ 
-    marca: "Ford", 
-    modello: "mondeo", 
-    alimentazione: "gpl" 
-  },
-  car9 :{ 
-    marca: "Hyundai", 
-    modello: "tucson", 
-    alimentazione: "eletrico" 
-  },
-  car10 :{ 
-    marca: "Hyundai", 
-    modello: "i20", 
-    alimentazione: "metano" 
-  }
-}
+[
+  { marca: "Fiat", modello: "Panda", alimentazione: "benzina" },
+  { marca: "Fiat", modello: "500", alimentazione: "benzina" },
+  { marca: "Audi", modello: "A6", alimentazione: "diesel" },
+  { marca: "Audi", modello: "S6", alimentazione: "diesel" },
+  { marca: "Citroën", modello: "C4", alimentazione: "diesel" },
+  { marca: "Citroën", modello: "Berlingo", alimentazione: "benzina" },
+  { marca: "Ford", modello: "Fiesta", alimentazione: "metano" },
+  { marca: "Ford", modello: "mondeo", alimentazione: "gpl" },
+  { marca: "Hyundai", modello: "tucson", alimentazione: "eletrico" },
+  { marca: "Hyundai", modello: "i20", alimentazione: "metano" }
+]
 
+var carBenzina=cars.filter(item=>item.alimentazione==="benzina");
+var carDiesel=cars.filter(item=>item.alimentazione==="diesel");
+var carOthers=cars.filter(item=>((item.alimentazione!="benzina")&&(item.alimentazione!="diesel")));
 
-const carBenzina=[];
-const carDiesel=[];
-const carOthers=[] ;
-
-for (const x in cars) {
-        const element = cars[x]; // è elemento di turno che controlliamo per ogni iterazione
-        if (element.alimentazione=="benzina"){ // se il value legato all' allimentazione è benzina
-            carBenzina.push({element:element});//la aggiungiamo alla nuova array carBenzina che abbiamo creato
-        }else if (element.alimentazione=="diesel") {// se il value legato all' allimentazione è diesel
-            carDiesel.push({element:element});//la aggiungiamo alla nuova array carDiesel che abbiamo creato
-        } else {
-            carOthers.push({element:element}); //tutte le altre macchine le aggiungiamo all'array carOthers
-            }
-    
-}
 console.log(carBenzina);
 console.log(carDiesel);
 console.log(carOthers);
-
 
 
 /* Secondo metodo dove stampo il nome delle macchine su index.html*/
