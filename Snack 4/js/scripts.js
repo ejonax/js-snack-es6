@@ -1,93 +1,33 @@
 const people=
-{
-  person1 :{ 
-    Name: "Ejona1",
-    Surname: "Xheka1",
-    Age: 15
-  },
-  person2 :{ 
-    Name: "Ejona2",
-    Surname: "Xheka2",
-    Age: 41
-  },
-  person3 :{ 
-    Name: "Ejona3",
-    Surname: "Xheka3",
-    Age: 25
-  },
-  person4 :{ 
-    Name: "Ejona4",
-    Surname: "Xheka4",
-    Age: 74
-  },
-  person5 :{ 
-    Name: "Ejona5",
-    Surname: "Xheka5",
-    Age: 82
-  }
-}
+[
+  { Name: "Ejona1", Surname: "Xheka1", Age: 15 },
+  { Name: "Ejona2", Surname: "Xheka2", Age: 41 },
+  { Name: "Ejona3", Surname: "Xheka3", Age: 25 },
+  { Name: "Ejona4", Surname: "Xheka4", Age: 74 },
+  { Name: "Ejona5", Surname: "Xheka5", Age: 82 }
+]
 
-/*******SECONDO METODO***********/
-const newPeople=[];
-for (const x in people) {
-        const element = people[x];
-        if( element.Age < 18 ) {
-           const newElement=element.Name +" " + element.Surname + " non puo guidare perchè ne ha meno di 18 anni";
-           console.log(element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò " +newElement);
-           newPeople.push(newElement);
-        }else if ( element.Age < 75  ) {
-           const newElement=element.Name +" " +element.Surname + " puo guidare perchè ne ha più di 18 anni e meno di 75 anni :)";
-           console.log(element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò " +newElement);
-           newPeople.push(newElement);
-        }else {
-            const newElement=element.Name +" " +element.Surname + " non puo guidare perchè ne ha più di 75 anni :)";
-            console.log(element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò " +newElement);
-            newPeople.push(newElement);
-        }
-}
-console.log(newPeople); //stampo su console la nuova array creata
-
-//stampo la nuova array creata su html
 let text= " ";
-for (let index = 0; index < newPeople.length; index++) {
-    const element = newPeople[index];
-    text +=  element + "<br>";
-}
-document.getElementById("demo1").innerHTML = "<p> La nuova array creata con il primo metodo è: </p>" + text;
+people.forEach(element => {
+  if( element.Age < 18 ) {
+    const newElement=element.Name +" " + element.Surname + " non puo guidare perchè ne ha meno di 18 anni";
+    //aggiungo la nuova frase per le persone sotto i 18
+    element.frase=newElement;
+    //creo text per stampare la frase che si aggiunge al lato html
+    text +=  "<li>"+element.frase + "</li>";
+ }else if ( element.Age < 75  ) {
+   //aggiungo la nuova frase per le persone sopra i 18 e sotto 75
+    element.frase=element.Name +" " +element.Surname + " puo guidare perchè ne ha più di 18 anni e meno di 75 anni :)";
+    text +=  "<li>"+element.frase + "</li>";
+  }else {
+    //aggiungo la nuova frase per le persone sopra i 75
+     element.frase=element.Name +" " +element.Surname + " non puo guidare perchè ne ha più di 75 anni :)";
+     text +=  "<li>"+element.frase + "</li>";
+    }
+});
 
-/*******PRIMO METODO***********/
-/* creo una seconda array gli elementi della qualle sono gli stessi del primo array,
- ma per ogni elemento si aggiunge una frase come nuovo property dell'object person */
-const newPeople2=[];
-for (const x in people) {
-        const element = people[x];
-        if( element.Age < 18 ) {
-           const newProperty="Non puo guidare perchè ne ha meno di 18 anni!";
-           element.Frase=newProperty;
-           newPeople2.push({Element:element});
-        }else if ( element.Age < 75  ) {
-           const newProperty="Puo guidare perchè ne ha più di 18 anni e meno di 75 anni!";
-           element.Frase=newProperty;
-           newPeople2.push({Element:element});
-        }else {
-            const newProperty="Non puo guidare perchè ne ha più di 75 anni!";
-            element.Frase=newProperty;
-            newPeople2.push({Element:element});
-        }
-}
-console.log(newPeople2);
+//stampo su console la nuova array creata che avrà anche la frase aggiunta per ogni persona
+console.log(people); 
 
-//stampo la nuova array come una lista sulla pagina index
-//ogni object person si stampa come un elemento <li> di una lista <ul>
-let text2= " ";
-for (const i in newPeople2) {
-        let singlePerson = newPeople2[i];
-        for (const j in singlePerson) {
-                const element = singlePerson[j];
-                let newElement=element.Name + " "+ element.Surname + " " +"ne ha " + element.Age +" anni" +" perciò: '" + element.Frase + " '";
-                console.log(newElement);
-                text2 +=  "<li>"+newElement + "</li>";
-            }
-        }
-
-document.getElementById("demo2").innerHTML = "<p> La nuova array creata con il secondo metodo è: </p> <ul>" + text2 + "</ul>"
+//stampo la nuova frase su index.html come <li> di una <ul>
+document.getElementById("demo2").innerHTML = "<p> Le frasi che si sono aggiunte ad ogni persona nell'array iniziale sono: </p> <ul>" + text + "</ul>"
