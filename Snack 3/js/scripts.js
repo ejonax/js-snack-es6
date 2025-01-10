@@ -10,7 +10,7 @@ const animals=
 ]
 
 //FOREACH METHOD
-//ciclo forearch dove si controlla dentro if se la callse è mammiferi
+//ciclo forearch dove si controlla dentro if se la classe è mammiferi
 //creo un nuovo array onlyMammiferi, faccio push ogni elemento che passa il controlllo del if
 let onlyMammiferi=[];
 animals.forEach(element => {
