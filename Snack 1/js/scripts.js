@@ -12,6 +12,7 @@ const cars=
   { marca: "Hyundai", modello: "i20", alimentazione: "metano" }
 ]
 
+// FILTER METHOD siccome cars lo abbiamo definito come array
 var carBenzina=cars.filter(item=>item.alimentazione==="benzina");
 var carDiesel=cars.filter(item=>item.alimentazione==="diesel");
 var carOthers=cars.filter(item=>((item.alimentazione!="benzina")&&(item.alimentazione!="diesel")));
@@ -20,26 +21,22 @@ console.log(carBenzina);
 console.log(carDiesel);
 console.log(carOthers);
 
-
-/* Secondo metodo dove stampo il nome delle macchine su index.html*/
+//FOREACH METHOD
+/* Secondo metodo dove stampo solo il nome delle macchine su index.html*/
 const carBenzina2=[]; 
 const carDiesel2=[];
 const carOthers2=[] ;
 
-for (const x in cars) {
-        const element = cars[x]; 
-        let carName="";
-        if (element.alimentazione=="benzina"){ 
-             carName=element.marca +" " + element.modello;
-             carBenzina2.push(carName);//la aggiungiamo alla nuova array delle macchine a benzina
-        }else if (element.alimentazione=="diesel") {
-              carName=element.marca +" " + element.modello;
-              carDiesel2.push(carName);
-        } else {
-              carName=element.marca +" " + element.modello;
-              carOthers2.push(carName);
-               }
-    }
+ cars.forEach(element => {
+  if (element.alimentazione=="benzina"){ 
+       carBenzina2.push(element.marca +" " + element.modello);
+  }else if (element.alimentazione=="diesel") {
+        carDiesel2.push(element.marca +" " + element.modello);
+  } else {
+        carOthers2.push(element.marca +" " + element.modello);
+         }
+ });
+
 //stampo le liste degli nuova array su html
 document.getElementById("demo1").innerHTML = "<p> La lista delle macchine a benzina è: </p> <u>" + carBenzina2 + "</u>";
 document.getElementById("demo2").innerHTML = "<p> La lista delle macchine che usano il diesel è: </p> <u>" + carDiesel2 + "</u>";
