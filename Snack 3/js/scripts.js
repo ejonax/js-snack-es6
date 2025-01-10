@@ -5,8 +5,7 @@ const animals=
   { nome: 'gallina', famiglia: 'fasianidi', classe: 'uccelli'},
   { nome: "gatto", famiglia: "felidi", classe: "mammiferi" },
   { nome: 'cigno', famiglia: 'fasianidi', classe: 'uccelli'},
-  { nome: 'balena', famiglia: 'Cetacea', classe: 'mammiferi'},
-
+  { nome: 'balena', famiglia: 'Cetacea', classe: 'mammiferi'}
 ]
 
 //FOREACH METHOD
@@ -20,7 +19,7 @@ animals.forEach(element => {
   }
 }
 );
-
+//si stampa la nuova array 
 console.log(onlyMammiferi);
 
 //FILTER METHOD
